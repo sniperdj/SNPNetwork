@@ -15,6 +15,11 @@
 		7DA49D4021DD08D200F8FBC1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DA49D3F21DD08D200F8FBC1 /* main.m */; };
 		7DA49D4A21DD08D200F8FBC1 /* SNPNetworkTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DA49D4921DD08D200F8FBC1 /* SNPNetworkTests.m */; };
 		7DA49D5521DD08D200F8FBC1 /* SNPNetworkUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DA49D5421DD08D200F8FBC1 /* SNPNetworkUITests.m */; };
+		7DA49D7121E1A74B00F8FBC1 /* SNPHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DA49D7021E1A74B00F8FBC1 /* SNPHTTPRequest.m */; };
+		7DA49D7421E1A75500F8FBC1 /* SNPHTTPTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DA49D7321E1A75500F8FBC1 /* SNPHTTPTask.m */; };
+		7DA49D7721E1A78200F8FBC1 /* SNPHTTPManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DA49D7621E1A78200F8FBC1 /* SNPHTTPManager.m */; };
+		7DA49D7A21E1A86A00F8FBC1 /* SNPNetworkConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DA49D7921E1A86A00F8FBC1 /* SNPNetworkConst.m */; };
+		A53FFAF500ECDFE08CD410F2 /* Pods_SNPNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18E0AFCC23234787CC97700F /* Pods_SNPNetwork.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +40,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		18E0AFCC23234787CC97700F /* Pods_SNPNetwork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SNPNetwork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4BCA1459FB2741249C5CE0B4 /* Pods-SNPNetwork.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SNPNetwork.release.xcconfig"; path = "Pods/Target Support Files/Pods-SNPNetwork/Pods-SNPNetwork.release.xcconfig"; sourceTree = "<group>"; };
 		7DA49D2D21DD08CD00F8FBC1 /* SNPNetwork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SNPNetwork.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DA49D3021DD08CD00F8FBC1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		7DA49D3121DD08CD00F8FBC1 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -51,6 +58,15 @@
 		7DA49D5021DD08D200F8FBC1 /* SNPNetworkUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SNPNetworkUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DA49D5421DD08D200F8FBC1 /* SNPNetworkUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SNPNetworkUITests.m; sourceTree = "<group>"; };
 		7DA49D5621DD08D200F8FBC1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7DA49D6F21E1A74B00F8FBC1 /* SNPHTTPRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SNPHTTPRequest.h; sourceTree = "<group>"; };
+		7DA49D7021E1A74B00F8FBC1 /* SNPHTTPRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SNPHTTPRequest.m; sourceTree = "<group>"; };
+		7DA49D7221E1A75500F8FBC1 /* SNPHTTPTask.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SNPHTTPTask.h; sourceTree = "<group>"; };
+		7DA49D7321E1A75500F8FBC1 /* SNPHTTPTask.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SNPHTTPTask.m; sourceTree = "<group>"; };
+		7DA49D7521E1A78200F8FBC1 /* SNPHTTPManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SNPHTTPManager.h; sourceTree = "<group>"; };
+		7DA49D7621E1A78200F8FBC1 /* SNPHTTPManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SNPHTTPManager.m; sourceTree = "<group>"; };
+		7DA49D7821E1A86A00F8FBC1 /* SNPNetworkConst.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SNPNetworkConst.h; sourceTree = "<group>"; };
+		7DA49D7921E1A86A00F8FBC1 /* SNPNetworkConst.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SNPNetworkConst.m; sourceTree = "<group>"; };
+		F88679B9B8A8D165667C2BFE /* Pods-SNPNetwork.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SNPNetwork.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SNPNetwork/Pods-SNPNetwork.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A53FFAF500ECDFE08CD410F2 /* Pods_SNPNetwork.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +102,8 @@
 				7DA49D4821DD08D200F8FBC1 /* SNPNetworkTests */,
 				7DA49D5321DD08D200F8FBC1 /* SNPNetworkUITests */,
 				7DA49D2E21DD08CD00F8FBC1 /* Products */,
+				ECD5BECF1D3A31C331794022 /* Pods */,
+				B1FD2AC287CD2B196CFE433B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,6 +120,7 @@
 		7DA49D2F21DD08CD00F8FBC1 /* SNPNetwork */ = {
 			isa = PBXGroup;
 			children = (
+				7DA49D6521E1A6CE00F8FBC1 /* SNPNetwork */,
 				7DA49D3021DD08CD00F8FBC1 /* AppDelegate.h */,
 				7DA49D3121DD08CD00F8FBC1 /* AppDelegate.m */,
 				7DA49D3321DD08CD00F8FBC1 /* ViewController.h */,
@@ -132,6 +152,38 @@
 			path = SNPNetworkUITests;
 			sourceTree = "<group>";
 		};
+		7DA49D6521E1A6CE00F8FBC1 /* SNPNetwork */ = {
+			isa = PBXGroup;
+			children = (
+				7DA49D6F21E1A74B00F8FBC1 /* SNPHTTPRequest.h */,
+				7DA49D7021E1A74B00F8FBC1 /* SNPHTTPRequest.m */,
+				7DA49D7221E1A75500F8FBC1 /* SNPHTTPTask.h */,
+				7DA49D7321E1A75500F8FBC1 /* SNPHTTPTask.m */,
+				7DA49D7521E1A78200F8FBC1 /* SNPHTTPManager.h */,
+				7DA49D7621E1A78200F8FBC1 /* SNPHTTPManager.m */,
+				7DA49D7821E1A86A00F8FBC1 /* SNPNetworkConst.h */,
+				7DA49D7921E1A86A00F8FBC1 /* SNPNetworkConst.m */,
+			);
+			path = SNPNetwork;
+			sourceTree = "<group>";
+		};
+		B1FD2AC287CD2B196CFE433B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				18E0AFCC23234787CC97700F /* Pods_SNPNetwork.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		ECD5BECF1D3A31C331794022 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F88679B9B8A8D165667C2BFE /* Pods-SNPNetwork.debug.xcconfig */,
+				4BCA1459FB2741249C5CE0B4 /* Pods-SNPNetwork.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -139,9 +191,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7DA49D5921DD08D200F8FBC1 /* Build configuration list for PBXNativeTarget "SNPNetwork" */;
 			buildPhases = (
+				A43F15B5593656C9937E743C /* [CP] Check Pods Manifest.lock */,
 				7DA49D2921DD08CD00F8FBC1 /* Sources */,
 				7DA49D2A21DD08CD00F8FBC1 /* Frameworks */,
 				7DA49D2B21DD08CD00F8FBC1 /* Resources */,
+				F5E7C2A4B6BCA0864C4076C6 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -257,14 +311,65 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		A43F15B5593656C9937E743C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SNPNetwork-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F5E7C2A4B6BCA0864C4076C6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-SNPNetwork/Pods-SNPNetwork-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SNPNetwork/Pods-SNPNetwork-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		7DA49D2921DD08CD00F8FBC1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7DA49D7421E1A75500F8FBC1 /* SNPHTTPTask.m in Sources */,
 				7DA49D3521DD08CD00F8FBC1 /* ViewController.m in Sources */,
+				7DA49D7121E1A74B00F8FBC1 /* SNPHTTPRequest.m in Sources */,
+				7DA49D7721E1A78200F8FBC1 /* SNPHTTPManager.m in Sources */,
 				7DA49D4021DD08D200F8FBC1 /* main.m in Sources */,
 				7DA49D3221DD08CD00F8FBC1 /* AppDelegate.m in Sources */,
+				7DA49D7A21E1A86A00F8FBC1 /* SNPNetworkConst.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -433,6 +538,7 @@
 		};
 		7DA49D5A21DD08D200F8FBC1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F88679B9B8A8D165667C2BFE /* Pods-SNPNetwork.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -449,6 +555,7 @@
 		};
 		7DA49D5B21DD08D200F8FBC1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4BCA1459FB2741249C5CE0B4 /* Pods-SNPNetwork.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
