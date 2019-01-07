@@ -19,6 +19,7 @@
 		7DA49D7421E1A75500F8FBC1 /* SNPHTTPTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DA49D7321E1A75500F8FBC1 /* SNPHTTPTask.m */; };
 		7DA49D7721E1A78200F8FBC1 /* SNPHTTPManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DA49D7621E1A78200F8FBC1 /* SNPHTTPManager.m */; };
 		7DA49D7A21E1A86A00F8FBC1 /* SNPNetworkConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DA49D7921E1A86A00F8FBC1 /* SNPNetworkConst.m */; };
+		7DA49D7D21E39DB500F8FBC1 /* SNPHTTPData.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DA49D7C21E39DB500F8FBC1 /* SNPHTTPData.m */; };
 		A53FFAF500ECDFE08CD410F2 /* Pods_SNPNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18E0AFCC23234787CC97700F /* Pods_SNPNetwork.framework */; };
 /* End PBXBuildFile section */
 
@@ -66,6 +67,8 @@
 		7DA49D7621E1A78200F8FBC1 /* SNPHTTPManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SNPHTTPManager.m; sourceTree = "<group>"; };
 		7DA49D7821E1A86A00F8FBC1 /* SNPNetworkConst.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SNPNetworkConst.h; sourceTree = "<group>"; };
 		7DA49D7921E1A86A00F8FBC1 /* SNPNetworkConst.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SNPNetworkConst.m; sourceTree = "<group>"; };
+		7DA49D7B21E39DB500F8FBC1 /* SNPHTTPData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SNPHTTPData.h; sourceTree = "<group>"; };
+		7DA49D7C21E39DB500F8FBC1 /* SNPHTTPData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SNPHTTPData.m; sourceTree = "<group>"; };
 		F88679B9B8A8D165667C2BFE /* Pods-SNPNetwork.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SNPNetwork.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SNPNetwork/Pods-SNPNetwork.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -163,6 +166,8 @@
 				7DA49D7621E1A78200F8FBC1 /* SNPHTTPManager.m */,
 				7DA49D7821E1A86A00F8FBC1 /* SNPNetworkConst.h */,
 				7DA49D7921E1A86A00F8FBC1 /* SNPNetworkConst.m */,
+				7DA49D7B21E39DB500F8FBC1 /* SNPHTTPData.h */,
+				7DA49D7C21E39DB500F8FBC1 /* SNPHTTPData.m */,
 			);
 			path = SNPNetwork;
 			sourceTree = "<group>";
@@ -366,6 +371,7 @@
 				7DA49D7421E1A75500F8FBC1 /* SNPHTTPTask.m in Sources */,
 				7DA49D3521DD08CD00F8FBC1 /* ViewController.m in Sources */,
 				7DA49D7121E1A74B00F8FBC1 /* SNPHTTPRequest.m in Sources */,
+				7DA49D7D21E39DB500F8FBC1 /* SNPHTTPData.m in Sources */,
 				7DA49D7721E1A78200F8FBC1 /* SNPHTTPManager.m in Sources */,
 				7DA49D4021DD08D200F8FBC1 /* main.m in Sources */,
 				7DA49D3221DD08CD00F8FBC1 /* AppDelegate.m in Sources */,

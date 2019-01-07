@@ -7,10 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+@class SNPHTTPRequest;
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface SNPHTTPTask : NSObject
+
++ (NSURLSessionDataTask *)taskWithRequest:(SNPHTTPRequest *)request;
 
 @end
 

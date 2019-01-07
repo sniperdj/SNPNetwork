@@ -7,10 +7,28 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "SNPNetworkConst.h"
+@class SNPHTTPData;
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface SNPHTTPManager : NSObject
+
+SNPHTTPManager *reqManager(SNPHTTPMethod method);
+
+SNPHTTPManager *reqData(SNPHTTPData *data);
+
+- (SNPHTTPManager *(^)(NSString *url))reqUrl;
+
+- (SNPHTTPManager *(^)(NSDictionary *headers))reqHeaders;
+
+- (SNPHTTPManager *(^)(NSDictionary *params))reqParams;
+
+- (SNPHTTPManager *(^)(SNPHTTPMethod method))reqMethod;
+
+- (SNPHTTPManager *(^)(SNPHTTPRequestType))reqType;
+
+- (SNPHTTPManager *(^)(SNPHTTPResponseType))resType;
 
 @end
 
