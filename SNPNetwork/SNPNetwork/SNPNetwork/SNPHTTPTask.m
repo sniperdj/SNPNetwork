@@ -32,7 +32,7 @@ static AFHTTPSessionManager *manager = nil;
     return nil;
 }
 
-+ (void)customManagerWithRequest:(SNPHTTPRequest *)req {
++ (AFHTTPSessionManager *)customManagerWithRequest:(SNPHTTPRequest *)req {
     AFHTTPSessionManager *manager = [self manager];
     NSDictionary *headers = req.headers;
     // 请求头
@@ -52,16 +52,19 @@ static AFHTTPSessionManager *manager = nil;
     } else if (req.responseType == SNPResponseHTTP) {
         manager.responseSerializer = [AFHTTPResponseSerializer serializer];
     }
-    
+    return manager;
 }
 #pragma mark - 具体请求
 + (NSURLSessionDataTask *)makePostReq:(SNPHTTPRequest *)req {
-    AFHTTPSessionManager *manager = [self manager];
+    AFHTTPSessionManager *manager = [self customManagerWithRequest:req];
+    [req willStartLoadWithUrl:req.url params:req.params];
     return [manager POST:req.url parameters:req.params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        [req didFinishLoadWithUrl:req.url urlTask:task];
         if (req.successBlock) {
             req.successBlock(responseObject);
         }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        [req didFinishLoadWithUrl:req.url urlTask:task];
         if (req.errorBlock) {
             req.errorBlock(error);
         }

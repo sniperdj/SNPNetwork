@@ -30,6 +30,8 @@ SNPHTTPManager *reqData(SNPHTTPData *data);
 
 - (SNPHTTPManager *(^)(SNPHTTPResponseType))resType;
 
+- (SNPHTTPManager * _Nonnull (^)(void (^ _Nonnull)(id _Nonnull), void (^ _Nonnull)(NSError * _Nonnull)))reqResult;
+
 @end
 
 NS_ASSUME_NONNULL_END

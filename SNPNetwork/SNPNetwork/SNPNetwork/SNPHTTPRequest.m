@@ -10,6 +10,12 @@
 
 @implementation SNPHTTPRequest
 
+- (void)willStartLoadWithUrl:(NSString *)url params:(NSDictionary *)params {
+    
+}
 
+- (void)didFinishLoadWithUrl:(NSString *)url urlTask:(NSURLSessionDataTask *)task {
+    
+}
 
 @end

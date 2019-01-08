@@ -22,6 +22,7 @@
 
 SNPHTTPManager *reqManager(SNPHTTPMethod method) {
     SNPHTTPManager *manager = [SNPHTTPManager new];
+    manager.request = [[SNPHTTPRequest alloc] init];
     manager.request.reqMethod = method;
     manager.request.requestType = SNPRequestJSON;
     manager.request.responseType = SNPResponseJSON;
@@ -30,6 +31,7 @@ SNPHTTPManager *reqManager(SNPHTTPMethod method) {
 
 SNPHTTPManager *reqData(SNPHTTPData *data) {
     SNPHTTPManager *manager = [SNPHTTPManager new];
+    manager.request = [[SNPHTTPRequest alloc] init];
     manager.reqUrl([data url]).reqMethod([data reqMethod]).reqHeaders([data headers]).reqParams([data params]).reqType([data reqType]).resType([data resType]);
     return manager;
 }
@@ -44,14 +46,18 @@ SNPHTTPManager *reqData(SNPHTTPData *data) {
 
 - (SNPHTTPManager *(^)(NSDictionary *headers))reqHeaders {
     return ^(NSDictionary *headers) {
-        self.request.headers = headers;
+        if (headers != nil) {
+            self.request.headers = headers;
+        }
         return self;
     };
 }
 
 - (SNPHTTPManager *(^)(NSDictionary *params))reqParams {
     return ^(NSDictionary *params) {
-        self.request.params = params;
+        if (params != nil) {
+            self.request.params = params;
+        }
         return self;
     };
 }

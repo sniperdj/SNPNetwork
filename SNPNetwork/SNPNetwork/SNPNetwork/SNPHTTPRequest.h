@@ -30,6 +30,9 @@ NS_ASSUME_NONNULL_BEGIN
 /** 失败回调 */
 @property (nonatomic, copy)void (^errorBlock)(NSError *error);
 
+- (void)willStartLoadWithUrl:(NSString *)url params:(NSDictionary *)params;
+
+- (void)didFinishLoadWithUrl:(NSString *)url urlTask:(NSURLSessionDataTask *)task;
 
 @end
 
