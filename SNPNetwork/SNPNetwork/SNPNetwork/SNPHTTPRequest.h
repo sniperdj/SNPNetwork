@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "SNPNetworkConst.h"
+@class SNPUploadModel;
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -19,6 +20,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong)NSDictionary *headers;
 /** 请求体 */
 @property (nonatomic, strong)NSDictionary *params;
+/** 上传的文件数组 */
+@property (nonatomic, strong)NSMutableArray<SNPUploadModel *> *uploadFiles;
+/** 下载路径 */
+@property (nonatomic, copy)NSString *downloadFilePath;
 /** httpMethod */
 @property (nonatomic, assign)SNPHTTPMethod reqMethod;
 /** 请求格式 */
@@ -28,7 +33,9 @@ NS_ASSUME_NONNULL_BEGIN
 /** 成功回调 */
 @property (nonatomic, copy)void (^successBlock)(id json);
 /** 失败回调 */
-@property (nonatomic, copy)void (^errorBlock)(NSError *error);
+@property (nonatomic, copy)void (^failBlock)(NSError *error);
+/** 进度回调 */
+@property (nonatomic, copy)void (^progressBlock)(NSProgress *progress);
 
 - (void)willStartLoadWithUrl:(NSString *)url params:(NSDictionary *)params;
 

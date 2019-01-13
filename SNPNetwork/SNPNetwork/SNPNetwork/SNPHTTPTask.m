@@ -9,20 +9,20 @@
 #import "SNPHTTPTask.h"
 #import "AFNetworking.h"
 #import "SNPHTTPRequest.h"
+#import "SNPUploadModel.h"
 
 @implementation SNPHTTPTask
 
-static AFHTTPSessionManager *manager = nil;
-
-+ (AFHTTPSessionManager *)manager {
-    if (!manager) {
++ (AFHTTPSessionManager *)shareManager {
+    static AFHTTPSessionManager *manager;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
         manager = [AFHTTPSessionManager manager];
-        manager.securityPolicy = [AFSecurityPolicy policyWithPinningMode:AFSSLPinningModeNone];
-    }
+    });
     return manager;
 }
 
-+ (NSURLSessionDataTask *)taskWithRequest:(SNPHTTPRequest *)request {
++ (NSURLSessionTask *)taskWithRequest:(SNPHTTPRequest *)request {
     [self customManagerWithRequest:request];
     if (request.reqMethod == SNPPost) {
         return [self makePostReq:request];
@@ -33,7 +33,7 @@ static AFHTTPSessionManager *manager = nil;
 }
 
 + (AFHTTPSessionManager *)customManagerWithRequest:(SNPHTTPRequest *)req {
-    AFHTTPSessionManager *manager = [self manager];
+    AFHTTPSessionManager *manager = [self shareManager];
     NSDictionary *headers = req.headers;
     // 请求头
     for (NSString *headKey in headers) {
@@ -55,7 +55,7 @@ static AFHTTPSessionManager *manager = nil;
     return manager;
 }
 #pragma mark - 具体请求
-+ (NSURLSessionDataTask *)makePostReq:(SNPHTTPRequest *)req {
++ (NSURLSessionTask *)makePostReq:(SNPHTTPRequest *)req {
     AFHTTPSessionManager *manager = [self customManagerWithRequest:req];
     [req willStartLoadWithUrl:req.url params:req.params];
     return [manager POST:req.url parameters:req.params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
@@ -65,22 +65,69 @@ static AFHTTPSessionManager *manager = nil;
         }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         [req didFinishLoadWithUrl:req.url urlTask:task];
-        if (req.errorBlock) {
-            req.errorBlock(error);
+        if (req.failBlock) {
+            req.failBlock(error);
         }
     }];
     
 }
 
-+ (NSURLSessionDataTask *)makeGetReq:(SNPHTTPRequest *)req {
-    AFHTTPSessionManager *manager = [self manager];
++ (NSURLSessionTask *)makeGetReq:(SNPHTTPRequest *)req {
+    AFHTTPSessionManager *manager = [self customManagerWithRequest:req];
     return [manager GET:req.url parameters:req.params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         if (req.successBlock) {
             req.successBlock(responseObject);
         }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        if (req.errorBlock) {
-            req.errorBlock(error);
+        if (req.failBlock) {
+            req.failBlock(error);
+        }
+    }];
+}
+
++ (NSURLSessionTask *)makeUploadReq:(SNPHTTPRequest *)req {
+    AFHTTPSessionManager *manager = [self customManagerWithRequest:req];
+    return [manager POST:req.url parameters:req.params constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
+        for (SNPUploadModel *file in req.uploadFiles) {
+            [formData appendPartWithFileData:file.data name:file.name fileName:file.fileName mimeType:file.mimeType];
+        }
+    } progress:^(NSProgress * _Nonnull uploadProgress) {
+        if (req.progressBlock) {
+            req.progressBlock(uploadProgress);
+        }
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        if (req.successBlock) {
+            req.successBlock(responseObject);
+        }
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        if (req.failBlock) {
+            req.failBlock(error);
+        }
+    }];
+}
+
++ (NSURLSessionTask *)makeDownloadReq:(SNPHTTPRequest *)req {
+    AFHTTPSessionManager *manager = [self customManagerWithRequest:req];
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:req.url]];
+    return [manager downloadTaskWithRequest:request progress:^(NSProgress * _Nonnull downloadProgress) {
+        if (req.progressBlock) {
+            req.progressBlock(downloadProgress);
+        }
+    } destination:^NSURL * _Nonnull(NSURL * _Nonnull targetPath, NSURLResponse * _Nonnull response) {
+        if (req.downloadFilePath != nil) {
+            return [NSURL URLWithString:req.downloadFilePath];
+        }
+        NSURL *downloadUrl = [[NSFileManager defaultManager] URLForDirectory:NSDocumentDirectory inDomain:NSUserDomainMask appropriateForURL:nil create:NO error:nil];
+        return [downloadUrl URLByAppendingPathComponent:[response suggestedFilename]];
+    } completionHandler:^(NSURLResponse * _Nonnull response, NSURL * _Nullable filePath, NSError * _Nullable error) {
+        if (error) {
+            if (req.failBlock) {
+                req.failBlock(error);
+            }
+        } else {
+            if (req.successBlock) {
+                req.successBlock(filePath);
+            }
         }
     }];
 }

@@ -24,10 +24,10 @@ NS_ASSUME_NONNULL_BEGIN
 - (SNPHTTPRequestType)reqType;
 
 - (SNPHTTPResponseType)resType;
-/** 成功回调 */
-- (void (^)(id json))successBlock;
-/** 失败回调 */
-- (void (^)(NSError *error))failBlock;
+///** 成功回调 */
+//- (void (^)(id json))successBlock;
+///** 失败回调 */
+//- (void (^)(NSError *error))failBlock;
 
 @end
 

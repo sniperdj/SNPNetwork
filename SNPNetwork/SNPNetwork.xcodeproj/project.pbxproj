@@ -20,6 +20,7 @@
 		7DA49D7721E1A78200F8FBC1 /* SNPHTTPManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DA49D7621E1A78200F8FBC1 /* SNPHTTPManager.m */; };
 		7DA49D7A21E1A86A00F8FBC1 /* SNPNetworkConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DA49D7921E1A86A00F8FBC1 /* SNPNetworkConst.m */; };
 		7DA49D7D21E39DB500F8FBC1 /* SNPHTTPData.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DA49D7C21E39DB500F8FBC1 /* SNPHTTPData.m */; };
+		7DA49E7221EB115700F8FBC1 /* SNPUploadModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DA49E7121EB115700F8FBC1 /* SNPUploadModel.m */; };
 		A53FFAF500ECDFE08CD410F2 /* Pods_SNPNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18E0AFCC23234787CC97700F /* Pods_SNPNetwork.framework */; };
 /* End PBXBuildFile section */
 
@@ -69,6 +70,8 @@
 		7DA49D7921E1A86A00F8FBC1 /* SNPNetworkConst.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SNPNetworkConst.m; sourceTree = "<group>"; };
 		7DA49D7B21E39DB500F8FBC1 /* SNPHTTPData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SNPHTTPData.h; sourceTree = "<group>"; };
 		7DA49D7C21E39DB500F8FBC1 /* SNPHTTPData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SNPHTTPData.m; sourceTree = "<group>"; };
+		7DA49E7021EB115700F8FBC1 /* SNPUploadModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SNPUploadModel.h; sourceTree = "<group>"; };
+		7DA49E7121EB115700F8FBC1 /* SNPUploadModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SNPUploadModel.m; sourceTree = "<group>"; };
 		F88679B9B8A8D165667C2BFE /* Pods-SNPNetwork.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SNPNetwork.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SNPNetwork/Pods-SNPNetwork.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -158,6 +161,7 @@
 		7DA49D6521E1A6CE00F8FBC1 /* SNPNetwork */ = {
 			isa = PBXGroup;
 			children = (
+				7DA49E6F21EB113C00F8FBC1 /* Model */,
 				7DA49D6F21E1A74B00F8FBC1 /* SNPHTTPRequest.h */,
 				7DA49D7021E1A74B00F8FBC1 /* SNPHTTPRequest.m */,
 				7DA49D7221E1A75500F8FBC1 /* SNPHTTPTask.h */,
@@ -170,6 +174,15 @@
 				7DA49D7C21E39DB500F8FBC1 /* SNPHTTPData.m */,
 			);
 			path = SNPNetwork;
+			sourceTree = "<group>";
+		};
+		7DA49E6F21EB113C00F8FBC1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7DA49E7021EB115700F8FBC1 /* SNPUploadModel.h */,
+				7DA49E7121EB115700F8FBC1 /* SNPUploadModel.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		B1FD2AC287CD2B196CFE433B /* Frameworks */ = {
@@ -372,6 +385,7 @@
 				7DA49D3521DD08CD00F8FBC1 /* ViewController.m in Sources */,
 				7DA49D7121E1A74B00F8FBC1 /* SNPHTTPRequest.m in Sources */,
 				7DA49D7D21E39DB500F8FBC1 /* SNPHTTPData.m in Sources */,
+				7DA49E7221EB115700F8FBC1 /* SNPUploadModel.m in Sources */,
 				7DA49D7721E1A78200F8FBC1 /* SNPHTTPManager.m in Sources */,
 				7DA49D4021DD08D200F8FBC1 /* main.m in Sources */,
 				7DA49D3221DD08CD00F8FBC1 /* AppDelegate.m in Sources */,
@@ -481,7 +495,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -534,7 +548,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -548,7 +562,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 24UF99W49D;
 				INFOPLIST_FILE = SNPNetwork/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -565,7 +581,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 24UF99W49D;
 				INFOPLIST_FILE = SNPNetwork/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

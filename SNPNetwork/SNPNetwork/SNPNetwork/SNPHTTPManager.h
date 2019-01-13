@@ -14,9 +14,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface SNPHTTPManager : NSObject
 
-SNPHTTPManager *reqManager(SNPHTTPMethod method);
+//SNPHTTPManager *reqManager(SNPHTTPMethod method);
+//
+//SNPHTTPManager *reqData(SNPHTTPData *data);
 
-SNPHTTPManager *reqData(SNPHTTPData *data);
++ (SNPHTTPManager *)reqManager;
 
 - (SNPHTTPManager *(^)(NSString *url))reqUrl;
 

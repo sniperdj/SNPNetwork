@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface SNPHTTPTask : NSObject
 
-+ (NSURLSessionDataTask *)taskWithRequest:(SNPHTTPRequest *)request;
++ (NSURLSessionTask *)taskWithRequest:(SNPHTTPRequest *)request;
 
 @end
 
